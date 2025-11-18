@@ -93,7 +93,15 @@ export default function Footer() {
             <a href="#" className="hover:text-primary-foreground transition-colors">
               Twitter
             </a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">
+            {/* <a href="https://www.instagram.com/3wisemens/?igsh=MTlvZ3d0YTAzNnpnaw%3D%3D#" className="hover:text-primary-foreground transition-colors">
+              Instagram
+            </a> */}
+            <a
+              href="https://www.instagram.com/3wisemens/?igsh=MTlvZ3d0YTAzNnpnaw%3D%3D#"
+              className="hover:text-primary-foreground transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Instagram
             </a>
           </div>
