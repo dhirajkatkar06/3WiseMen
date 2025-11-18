@@ -38,6 +38,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/send-mail",
+      "regex": "^/api/send\\-mail(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/send\\-mail(?:/)?$"
     }
   ],
   "dataRoutes": [],

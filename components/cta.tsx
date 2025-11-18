@@ -26,21 +26,50 @@ export default function CTA() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log(formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        firstName: '',
-        email: '',
-        phone: '',
-        message: '',
-        service: 'performance-marketing',
-      })
-    }, 2000)
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   console.log(formData)
+  //   setSubmitted(true)
+  //   setTimeout(() => {
+  //     setSubmitted(false)
+  //     setFormData({
+  //       firstName: '',
+  //       email: '',
+  //       phone: '',
+  //       message: '',
+  //       service: 'performance-marketing',
+  //     })
+  //   }, 2000)
+  // }
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/send-mail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          firstName: "",
+          email: "",
+          phone: "",
+          message: "",
+          service: "performance-marketing",
+        });
+      }, 2000);
+    } else {
+      alert("Failed to send email. Try again.");
+    }
+  } catch (error) {
+    console.log(error);
   }
+};
 
   return (
     <section id="cta" className="relative w-full py-20 md:py-32 px-4 md:px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
