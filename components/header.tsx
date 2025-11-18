@@ -11,7 +11,7 @@ export default function Header({ isScrolled }: { isScrolled: boolean }) {
     { label: 'Strategy', href: '#three-pillars' },
     { label: 'Services', href: '#services' },
     { label: 'Work', href: '#case-studies' },
-    { label: 'Blog', href: '#blog' },
+    // { label: 'Blog', href: '#blog' },
     { label: 'Contact', href: '#cta' },
   ]
 
