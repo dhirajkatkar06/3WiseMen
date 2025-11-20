@@ -5,7 +5,7 @@ import CountUp from './count-up'
 
 const caseStudies = [
   {
-    client: 'TechScale Inc',
+    client: "Siya's Cafe",
     industry: 'B2B SaaS',
     challenge: 'Low brand awareness and inconsistent lead generation',
     solution: 'Developed integrated digital strategy with content marketing and targeted advertising',

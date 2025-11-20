@@ -13,6 +13,7 @@ export default function CTA() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false) // <-- NEW
 
   const whatsappNumber = '9769708255'
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi%203wise%20Men%2C%20I%27d%20like%20to%20book%20a%20strategy%20call.`
@@ -26,53 +27,44 @@ export default function CTA() {
     })
   }
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   console.log(formData)
-  //   setSubmitted(true)
-  //   setTimeout(() => {
-  //     setSubmitted(false)
-  //     setFormData({
-  //       firstName: '',
-  //       email: '',
-  //       phone: '',
-  //       message: '',
-  //       service: 'performance-marketing',
-  //     })
-  //   }, 2000)
-  // }
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault()
+    setLoading(true)
 
-  try {
-    const res = await fetch("/api/send-mail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
 
-    if (res.ok) {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          firstName: "",
-          email: "",
-          phone: "",
-          message: "",
-          service: "performance-marketing",
-        });
-      }, 2000);
-    } else {
-      alert("Failed to send email. Try again.");
+      if (res.ok) {
+        setSubmitted(true)
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({
+            firstName: '',
+            email: '',
+            phone: '',
+            message: '',
+            service: 'performance-marketing',
+          })
+        }, 2000)
+      } else {
+        alert('Failed to send email. Try again.')
+      }
+    } catch (error) {
+      console.log(error)
     }
-  } catch (error) {
-    console.log(error);
+
+    setLoading(false)
   }
-};
 
   return (
-    <section id="cta" className="relative w-full py-20 md:py-32 px-4 md:px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <section
+      id="cta"
+      className="relative w-full py-20 md:py-32 px-4 md:px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"
+    >
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -141,16 +133,22 @@ export default function CTA() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-gradient-to-r from-[#6633CC] to-[#00D4FF] text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+                disabled={loading}
+                className="w-full px-8 py-3 bg-gradient-to-r from-[#6633CC] to-[#00D4FF] text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Get Your Strategy Call
+                {loading ? (
+                  <span className="flex justify-center items-center gap-2">
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    Sending...
+                  </span>
+                ) : (
+                  'Get Your Strategy Call'
+                )}
               </button>
             </form>
           ) : (
             <div className="text-center py-8">
-              <p className="text-2xl font-bold text-accent mb-2">
-                ✓ Thanks for reaching out!
-              </p>
+              <p className="text-2xl font-bold text-accent mb-2">✓ Thanks for reaching out!</p>
               <p className="text-foreground/80">
                 We'll contact you shortly to discuss your growth strategy.
               </p>
@@ -160,9 +158,7 @@ export default function CTA() {
 
         <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
           <div className="text-center">
-            <p className="text-foreground/80 mb-3">
-              Prefer a quick chat?
-            </p>
+            <p className="text-foreground/80 mb-3">Prefer a quick chat?</p>
             <a
               href={whatsappUrl}
               target="_blank"
@@ -173,11 +169,11 @@ export default function CTA() {
               WhatsApp Us Now
             </a>
           </div>
+
           <div className="hidden sm:block w-px h-12 bg-border" />
+
           <div className="text-center">
-            <p className="text-foreground/80 mb-3">
-              Or give us a call
-            </p>
+            <p className="text-foreground/80 mb-3">Or give us a call</p>
             <a
               href="tel:+919769708255"
               className="inline-flex items-center gap-1 text-xl font-bold text-accent hover:text-accent/80 transition-colors"

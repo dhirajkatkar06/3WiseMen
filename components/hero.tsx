@@ -48,7 +48,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
-          3Wise Men: Navigating the Digital Cosmos
+          Upliftr: Navigating the Digital Cosmos
         </h1>
 
         <p className="text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto text-balance">

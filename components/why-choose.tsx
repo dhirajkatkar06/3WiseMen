@@ -46,7 +46,7 @@ export default function WhyChoose() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Why Choose 3Wise Men
+            Why Choose Upliftr
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto text-balance">
             We're not just another agency. Here's what sets us apart.
@@ -85,11 +85,11 @@ export default function WhyChoose() {
         <div className="mt-16 pt-16 border-t border-border">
           <div className="bg-card rounded-2xl p-8 md:p-12 border border-border text-center">
             <p className="text-xl md:text-2xl text-foreground mb-6 font-medium text-balance">
-              "3Wise Men transformed our marketing approach. Within 6 months, we saw a 3x increase in qualified leads and a complete brand repositioning."
+              "Upliftr transformed our marketing approach. Within 6 months, we saw a 3x increase in qualified leads and a complete brand repositioning."
             </p>
             <div>
-              <p className="font-bold text-foreground">Sarah Chen</p>
-              <p className="text-sm text-foreground/60">CEO, TechScale Inc</p>
+              <p className="font-bold text-foreground">Pawan</p>
+              <p className="text-sm text-foreground/60">CEO, Siya's Cafe</p>
             </div>
           </div>
         </div>

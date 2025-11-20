@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: '3Wise Men | Strategic Digital Marketing Agency',
+  title: 'Upliftr | Strategic Digital Marketing Agency',
   description: 'Unlock exponential business growth through data-driven strategy and flawless execution. Industry-leading digital marketing agency for enterprise clients.',
   generator: 'v0.app',
   icons: {
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: '3Wise Men | Strategic Digital Marketing Agency',
+    title: 'Upliftr | Strategic Digital Marketing Agency',
     description: 'Transform your business with strategic digital marketing. Data-driven campaigns, proven results.',
     type: 'website',
     url: 'https://3wisemen.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '3Wise Men | Strategic Digital Marketing Agency',
+    title: 'Upliftr | Strategic Digital Marketing Agency',
     description: 'Unlock exponential business growth through data-driven strategy.',
   },
 }

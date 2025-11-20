@@ -9,9 +9,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold">3W</span>
+                <span className="text-foreground font-bold">U</span>
               </div>
-              <span className="font-bold">3Wise Men</span>
+              <span className="font-bold">Upliftr</span>
             </div>
             <p className="text-primary-foreground/70 text-sm">
               Strategic digital marketing for ambitious brands.
@@ -68,12 +68,12 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>
                 <a href="tel:+1234567890" className="hover:text-primary-foreground transition-colors">
-                  +1 (234) 567-8900
+                  +919833939499
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@3wisemen.com" className="hover:text-primary-foreground transition-colors">
-                  hello@3wisemen.com
+                <a href="mailto:growwithupliftr@gmail.com" className="hover:text-primary-foreground transition-colors">
+                  growwithupliftr@gmail.com
                 </a>
               </li>
             </ul>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-primary-foreground/70">
-          <p>© {currentYear} 3Wise Men. All rights reserved.</p>
+          <p>© {currentYear} Upliftr. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-primary-foreground transition-colors">
               LinkedIn
@@ -115,14 +115,14 @@ export default function Footer() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: '3Wise Men',
+            name: 'Upliftr',
             url: 'https://3wisemen.com',
             description: 'Strategic digital marketing agency for enterprise clients',
             contactPoint: {
               '@type': 'ContactPoint',
               contactType: 'Customer Service',
-              telephone: '+1-234-567-8900',
-              email: 'hello@3wisemen.com',
+              telephone: '+919833939499',
+              email: 'growwithupliftr@gmail.com',
             },
             areaServed: 'US',
             sameAs: [

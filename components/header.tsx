@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, MessageCircle } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Header({ isScrolled }: { isScrolled: boolean }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -28,12 +29,25 @@ export default function Header({ isScrolled }: { isScrolled: boolean }) {
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        {/* <Link href="logo.png" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gradient-to-br from-[#6633CC] to-[#00D4FF] rounded-lg flex items-center justify-center neon-glow">
             <span className="text-white font-bold text-lg">3W</span>
           </div>
           <span className="hidden sm:inline font-bold text-lg text-foreground">
             3Wise Men
+          </span>
+        </Link> */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.jpg"       // <-- your actual file name
+            alt="Upliftr Logo"
+            width={40}            // size similar to w-10 h-10
+            height={40}
+            className="rounded-lg"
+          />
+
+          <span className="hidden sm:inline font-bold text-lg text-foreground">
+            Upliftr
           </span>
         </Link>
 
